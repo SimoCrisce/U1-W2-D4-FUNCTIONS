@@ -74,7 +74,20 @@ boundary(120);
  ritornare la stringa originale senza alterarla.
 */
 
-function epify(str = "") {}
+function epify(str) {
+  const string = str;
+  if (string === "EPICODE") {
+    return string;
+  } else {
+    return "EPICODE" + string;
+  }
+}
+
+const par1 = epify("EPICODE");
+const par2 = epify(" è una scuola");
+
+console.log(par1);
+console.log(par2);
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -85,17 +98,29 @@ function epify(str = "") {}
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 function upperFirst(str) {
-  const frase = "ciao mi chiamo simone";
-  const words = frase.split(" ");
+  const words = str.split(" ");
+  //   let newString = "";
+  const newArrOfWords = [];
+  for (let i = 0; i < words.length; i++) {
+    const firstChar = words[i].charAt(0).toUpperCase();
+    const lastLetters = words[i].slice(1);
+    const upperWord = firstChar + lastLetters;
+    console.log(upperWord);
+    // newString += upperWord + " ";
+    newArrOfWords.push(upperWord);
+  }
+  console.log(newArrOfWords);
+  return newArrOfWords.join(" ");
+  //   return newString;
 }
+
+console.log(upperFirst("ciao mi chiamo simone"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -103,11 +128,13 @@ function upperFirst(str) {
 */
 
 function cutString(str) {
-  const frase = "ciao mi chiamo simone";
+  const string = str;
+  console.log(string.slice(1, -1));
 }
+cutString("Ciao mi chiamo Simone");
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(num1) {}
